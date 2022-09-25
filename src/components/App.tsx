@@ -58,7 +58,7 @@ export default function App() {
   async function handleGET() {
     setIsLoading(true)
     try {
-      const response = await axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10',)
+      const response = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10',)
       const data = await response.data; 
       setPosts(data)
       handleStateSetting(response)
@@ -79,7 +79,7 @@ export default function App() {
     if (inputOne) {
       try {
         setIsLoading(true)
-        const response = await axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10', {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10', {
           params: {
             id: inputOne
           }
@@ -102,7 +102,7 @@ export default function App() {
     if (inputTwo ) {
       try {
         setIsLoading(true)
-        const response = await axios.post('http://jsonplaceholder.typicode.com/todos', {
+        const response = await axios.post('https://jsonplaceholder.typicode.com/todos', {
           userId: '1', 
           title: inputTwo,
           completed: false
@@ -125,7 +125,7 @@ export default function App() {
     if (inputFour) {
       try {
         setIsLoading(true)
-        const response = await axios.patch(`http://jsonplaceholder.typicode.com/todos/${inputFive}`, {
+        const response = await axios.patch(`https://jsonplaceholder.typicode.com/todos/${inputFive}`, {
           title: inputFour,
           completed: true
         })
@@ -147,7 +147,7 @@ export default function App() {
     if (inputThree) {
       try {
         setIsLoading(true)
-        const response = await axios.delete( `http://jsonplaceholder.typicode.com/todos/${inputThree}`,)
+        const response = await axios.delete( `https://jsonplaceholder.typicode.com/todos/${inputThree}`,)
         const data = await response.data;
         setPosts([data])
         handleStateSetting(response)
